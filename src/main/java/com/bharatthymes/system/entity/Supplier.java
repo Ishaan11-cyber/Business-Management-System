@@ -1,0 +1,31 @@
+package com.bharatthymes.system.entity;
+
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Table(name = "suppliers")
+@Getter
+@Setter
+@NoArgsConstructor
+public class Supplier {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
+    private String supplierName;
+
+    private String contactPerson;
+
+    private String phone;
+
+    private String email;
+
+    private String gstin;
+
+    @Column(columnDefinition = "TEXT")
+    private String address;
+}
